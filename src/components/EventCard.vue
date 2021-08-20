@@ -6,6 +6,7 @@
 </template>
 
 <script setup lang="ts">
+/* global defineProps */
 defineProps<{
   event: object
 }>()
