@@ -8,8 +8,18 @@
 <script setup lang="ts">
 /* global defineProps */
 defineProps<{
-  event: object
-}>()
+  event: {
+    id: number;
+    category: string;
+    title: string;
+    description: string;
+    location: string;
+    date: string;
+    time: string;
+    petsAllowed: boolean;
+    organizer: string;
+  };
+}>();
 </script>
 
 <style scoped lang="scss">
