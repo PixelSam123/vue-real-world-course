@@ -1,12 +1,24 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link :to="{ name: 'EventList' }">Events</router-link> |
+    <router-link :to="{ name: 'About' }">About</router-link>
   </div>
   <router-view />
 </template>
 
-<script setup lang="ts"></script>
+<script lang="ts" setup>
+export interface EventsData {
+  id: number;
+  category: string;
+  title: string;
+  description: string;
+  location: string;
+  date: string;
+  time: string;
+  petsAllowed: boolean;
+  organizer: string;
+}
+</script>
 
 <style lang="scss">
 #app {

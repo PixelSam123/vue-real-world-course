@@ -1,28 +1,29 @@
 <template>
-  <div class="event-card">
-    <span>@ {{ event.time }} on {{ event.date }}</span>
-    <h4>{{ event.title }}</h4>
-  </div>
+  <router-link
+    class="link"
+    :to="{ name: 'EventDetails', params: { id: event.id } }"
+  >
+    <div class="event-card">
+      <span>@ {{ event.time }} on {{ event.date }}</span>
+      <h4>{{ event.title }}</h4>
+    </div>
+  </router-link>
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
+import type { EventsData } from '../App.vue';
+
 /* global defineProps */
 defineProps<{
-  event: {
-    id: number;
-    category: string;
-    title: string;
-    description: string;
-    location: string;
-    date: string;
-    time: string;
-    petsAllowed: boolean;
-    organizer: string;
-  };
+  event: EventsData;
 }>();
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
+.link {
+  color: #2c3e50;
+  text-decoration: none;
+}
 .event-card {
   padding: 20px;
   width: 250px;
