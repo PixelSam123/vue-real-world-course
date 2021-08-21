@@ -4,7 +4,7 @@
     "es2021": true
   },
   "extends": [
-    "plugin:vue/essential",
+    "plugin:vue/vue3-strongly-recommended",
     "airbnb-base",
     "airbnb-typescript/base",
     "prettier"
@@ -16,8 +16,5 @@
     "parser": "@typescript-eslint/parser",
     "project": "./tsconfig.json",
     "sourceType": "module"
-  },
-  "rules": {
-    "vue/no-multiple-template-root": "off"
   }
 }
